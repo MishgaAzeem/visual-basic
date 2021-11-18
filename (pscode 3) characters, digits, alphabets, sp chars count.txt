@@ -1,0 +1,35 @@
+3. Count and output the NUMBER of an entered character in a string. 
+Also output separate counts for alphabets(cap % small together), 
+digits and other characters in same entered string.
+
+DECLARE Str1 : STRING
+DECLARE ThisChar, Char1 : CHARACTER
+DECLARE Count ,CharCount, AlphaCount, DigitCount, SpCount : INTEGER
+
+Str1 <-- “”
+ThisChar <-- ‘’
+Char1 <-- ‘’
+CharCount <-- 0
+AlphaCount <-- 0
+DigitCount <-- 0
+SpCount <-- 0
+
+INPUT("Enter String to be processed : ", Str1)
+INPUT("Enter character to be searched: ", Char1)
+
+For Count = 1 To LENGTH(Str1)
+            CharCount = CharCount + 1
+            Char1 = Mid(Str1, Count, 1)
+            Char1 = UCase(Char1)
+            If Char1 >= "A" And Char1 <= "Z" Then
+                AlphaCount = AlphaCount + 1
+            ElseIf Char1 >= "0" And Char1 <= "9" Then
+                DigitCount = DigitCount + 1
+            Else : SpCount = SpCount + 1
+            End If
+        Next
+
+OUTPUT("Number of characters: ", CharCount)
+OUTPUT("Number of Alphabet: ", AlphaCount)
+OUTPUT("Number of Digit: ", DigitCount)
+OUTPUT("Number of Other characters: ", SpCount)

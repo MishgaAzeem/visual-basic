@@ -1,0 +1,32 @@
+4. Find the character that appears the most number of times in an entered string and output it. 
+
+DECLARE Str1 : STRING
+DECLARE MyChar, ThisChar, NextChar : CHARACTER
+DECLARE Count, Count2, Count3, Highest : INTEGER
+
+Str1 <-- ""
+MyChar <-- ''
+ThisChar <-- ''
+NextChar <-- ''
+Count <-- 0
+Count2 <-- 0
+Count3 <-- 0
+Highest <-- 0
+
+INPUT("Enter String to be processed: ", Str1)
+
+For Count <-- 1 To LENGTH(Str1)
+ThisChar <-- Mid(St1, Count, 1)
+Count3 <-- 0
+For Count2 <-- 1 To LENGTH(Str1)
+NextChar <-- Mid(Str1, Count2, 1)
+If ThisChar = NextChar Then
+Count3 = Count3 + 1
+EndIf
+Next
+If Count3 > Highest Then
+Highest <-- Count3
+MyChar <-- ThisChar
+Next
+
+OUTPUT(myChar, "occured", Highest, "no of times")

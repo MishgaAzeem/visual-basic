@@ -1,0 +1,25 @@
+7.
+both_ends:
+Input a string s, output a string made of the first 2
+and the last 2 chars of the original string,
+so 'spring' yields 'spng'. However, if the string length
+is less than 2, return string s instead the empty string.
+
+DECLARE StrS, Str2, ThisChar : STRING
+DECLARE Count : INTEGER
+
+StrS <-- ""
+Str2 <-- ""
+ThisChar <-- ""
+Count <-- 0
+
+INPUT("Enter String to be processed: ", StrS)
+ThisChar <-- LEFT(StrS, 2)
+Str2 <-- Str2 + ThisChar
+ThisChar <-- RIGHT(StrS, 2)
+Str2 <-- Str2 + ThisChar
+
+If LENGTH(StrS) < 2 Then
+OUTPUT("String not changed: ", StrS)
+Else OUTPUT("New String: ", Str2)
+EndIf

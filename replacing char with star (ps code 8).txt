@@ -1,0 +1,31 @@
+8.
+fix_start:
+Given a string s, return a string
+where all occurences of its first char have
+been changed to '*', except do not change
+the first char itself.
+e.g., 'babble' yields 'ba**le' or 'alpha' outputs 'alph*'
+Assume that the string is length 1 or more.
+
+DECLARE StrS, Str2 : STRING
+DECLARE ThisChar, FirstChar : CHARACTER
+DECLARE Count: INTEGER
+
+StrS <-- ""
+Str2 <-- ""
+ThisChar <-- ''
+FirstChar <-- ''
+Count <-- 0
+
+INPUT("Enter the string to be processed: ", StrS)
+FirstChar <-- LEFT(StrS, 1)
+Str2 <-- Str2 + FirstChar
+
+FOR Count<-- 2 To LENGTH(StrS)
+ThisChar <-- MID(StrS, Count, 1)
+IF ThisChar = FirstChar Then
+Str2 <-- Str2 + "*"
+ELSE Str2 <-- Str2 + ThisChar
+EndIf
+NEXT
+OUTPUT("New string: ", Str2)
